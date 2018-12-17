@@ -26,8 +26,8 @@ install_maistra() {
 install_executable() {
   local download_url=$1
   local bin_path=$2
-  wget "$download_url" -O "${bin_path}/istiooc"
-  chmod +x "${bin_path}/istiooc"
+  wget "$download_url" -O "${bin_path}"
+  chmod +x "${bin_path}"
 }
 
 get_arch() {
