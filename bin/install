@@ -17,27 +17,10 @@ install_maistra() {
   mkdir -p ${bin_install_path}
 
   local bin_path="${bin_install_path}/istiooc"
-  local tempdir=""
-  [ "linux" = "$(get_arch)" ] && tempdir=$(mktemp -d asdf-maistra.XXXXXXX) || tempdir=$(mktemp -dt asdf-maistra)
 
   echo "Downloading maistra v${version} from ${download_url}"  
-  if [[ "${version}" == 0* ]]; then
-    install_executable $download_url $bin_path
-  else
-    install_archive $download_url $install_path $bin_path $tempdir
-  fi
-}
+  install_executable $download_url $bin_path
 
-install_archive() {
-  local download_url=$1
-  local install_path=$2
-  local bin_path=$3
-  local tempdir=$4
-  
-  curl -sSL "$download_url" -o "${tempdir}/maistra.archive.tgz"
-  tar -C "${install_path}/bin" -xzf "${tempdir}/maistra.archive.tgz"  --strip 1 # this works only for latest versions (e.g 1.2 is a flat archive)
-  chmod +x $bin_path
-  rm -rf "${tempdir}"
 }
 
 install_executable() {
