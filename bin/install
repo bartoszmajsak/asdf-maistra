@@ -39,7 +39,7 @@ get_arch() {
 get_download_url() {
   local version="$1"
   local filename=""
-  filename="istiooc-$(get_arch)"
+  filename="istiooc_$(get_arch)"
   
   echo "https://github.com/Maistra/origin/releases/download/${version}/${filename}"
 }
