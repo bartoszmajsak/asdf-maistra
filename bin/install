@@ -14,11 +14,11 @@ install_maistra() {
   local bin_install_path="$install_path/bin"
   local download_url="$(get_download_url $version)"
 
-  mkdir -p ${bin_install_path}
+  mkdir -p "${bin_install_path}"
 
   local bin_path="${bin_install_path}/istiooc"
 
-  echo "Downloading maistra v${version} from ${download_url}"  
+  echo "Downloading maistra v${version} from ${download_url} to ${bin_install_path}"  
   install_executable $download_url $bin_path
 
 }
@@ -26,7 +26,7 @@ install_maistra() {
 install_executable() {
   local download_url=$1
   local bin_path=$2
-  curl -sSL "$download_url" -o "${bin_path}/istiooc"
+  wget "$download_url" -O "${bin_path}/istiooc"
   chmod +x "${bin_path}/istiooc"
 }
 
