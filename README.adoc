@@ -1,0 +1,16 @@
+= asdf-maistra
+
+image::https://travis-ci.org/bartoszmajsak/asdf-maistra.svg?branch=master)[link="https://travis-ci.org/bartoszmajsak/asdf-maistra"]
+
+https://github.com/Maistra/origint[Maistra] (Istio with Openshift) plugin for https://github.com/asdf-vm/asdf[asdf] version manager.
+
+== Install
+
+[source,bash]
+----
+asdf plugin-add maistra https://github.com/bartoszmajsak/asdf-maistra.git
+----
+
+== Use
+
+Check out the https://github.com/asdf-vm/asdf/README.md[asdf README] for instructions on how to install and manage versions of variety of tools it supports.
