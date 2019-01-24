@@ -1,5 +1,5 @@
 language: c
-script: asdf plugin-test telepresence https://github.com/bartoszmajsak/asdf-maistra.git
+script: asdf plugin-test maistra https://github.com/bartoszmajsak/asdf-maistra.git
 before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
